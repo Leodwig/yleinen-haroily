@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: f2d042c89067a46459c6fd5e9e4331cf
+timeCreated: 1425065586
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - tvMaterialScreen: {fileID: 2100000, guid: d5a957a0ed6ccdf4ea2824d678c58eee, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

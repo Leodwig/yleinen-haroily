@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 2c2b7b5a87a87944b8eec1fbb85943bb
+timeCreated: 1425065589
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - tvMaterialTube: {fileID: 2100000, guid: 10a0c5709e43b824ea2373233671c58d, type: 2}
+  - scanlinePattern: {instanceID: 0}
+  - mask: {instanceID: 0}
+  - reflex: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

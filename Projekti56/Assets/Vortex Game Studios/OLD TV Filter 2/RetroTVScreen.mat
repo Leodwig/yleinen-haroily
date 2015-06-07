@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: RetroTVScreen
+  m_Shader: {fileID: 4800000, guid: bab32901ff4fcf846b8244ef5d16eb40, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _ChromaticAberrationTex
+        second:
+          m_Texture: {fileID: 2800000, guid: 739cbb7d52294184593ce6b7676a510b, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _NoiseTex
+        second:
+          m_Texture: {fileID: 2800000, guid: df0ffcc7ed4d822408d84a34b9d048e0, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: .545298636, y: .598077953}
+      data:
+        first:
+          name: _Static
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _StaticMask
+        second:
+          m_Texture: {fileID: 2800000, guid: 43a04c1efe2bb194e936e6b500cc884d, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _ScreenHorizontal
+        second: 1
+      data:
+        first:
+          name: _Mobile
+        second: 0
+      data:
+        first:
+          name: _Saturation
+        second: 0
+      data:
+        first:
+          name: _ChromaticAberrationMagnetude
+        second: .0149999997
+      data:
+        first:
+          name: _NoiseMagnetude
+        second: .100000001
+      data:
+        first:
+          name: _StaticMagnetude
+        second: .00999999978
+    m_Colors: {}
