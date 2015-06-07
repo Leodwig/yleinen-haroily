@@ -3,6 +3,8 @@ using System.Collections;
 
 public class GroundController : MonoBehaviour {
 
+	public static GroundController instance;
+
 	// Peruslattian prefab
 	public GameObject basicGround;
 	
@@ -20,10 +22,25 @@ public class GroundController : MonoBehaviour {
 	private float offset;
 	private float offsetAmount;
 	
+	// Taulukko tileistä, joka on kätketty inspectorissa (tarkoitus käsitellä koodin kautta)
+	[HideInInspector]
+	public GameObject[,] tilesAsArray;
+	
 	void Start () {
-		// Asetetaan muuttujan alkuarvo
-		offsetAmount = tileWidth * 0.4f;
+		Init();
+		GenerateLevel();
+	}
+	
+	private void Init() {
+		// Tekee tästä globaalin
+		instance = this;
 		
+		// Asetetaan muuttujien alkuarvot
+		offsetAmount = tileWidth * 0.4f;
+		tilesAsArray = new GameObject[width,height];
+	}
+	
+	private void GenerateLevel() {
 		// Luo pohjatilet
 		for (int i = 0; i < width; i++) {
 			for (int j = 0; j < height; j++) {
@@ -39,6 +56,9 @@ public class GroundController : MonoBehaviour {
 				GameObject tile = (GameObject)Instantiate(basicGround, new Vector3((i * tileWidth) + offset, j * tileHeight, 1), Quaternion.identity);
 				//Asettaa luodun tilen tämän lapseksi
 				tile.transform.parent = transform;
+				
+				// Lisää tilen taulukkoon
+				tilesAsArray[i,j] = tile;
 			}
 		}
 		
@@ -60,6 +80,9 @@ public class GroundController : MonoBehaviour {
 			GameObject instantiatedTile = (GameObject)Instantiate(tile, new Vector3((coord.x * tileWidth) + offset, coord.y * tileHeight, coord.z), Quaternion.identity);
 			// Asettaa luodun tilen tämän lapseksi
 			instantiatedTile.transform.parent = transform;
+			
+			// Lisää tilen taulukkoon
+			tilesAsArray[(int)coordinates[i].x,(int)coordinates[i].y] = instantiatedTile;
 		}
 		
 		// Keskittää kentän
