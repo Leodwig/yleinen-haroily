@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GroundController : MonoBehaviour {
 
@@ -29,6 +30,14 @@ public class GroundController : MonoBehaviour {
 	void Start () {
 		Init();
 		GenerateLevel();
+	}
+	
+	public GameObject[] GetNeighbours(GameObject tile) {
+		List<GameObject> neighbours = new List<GameObject>();
+
+		// Etsitään tilen "tile" naapurit ja lisätää ne neighboursiin
+		
+		return neighbours.ToArray();
 	}
 	
 	private void Init() {
