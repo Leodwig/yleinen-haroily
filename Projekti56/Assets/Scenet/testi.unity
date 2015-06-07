@@ -200,3 +200,11 @@ MonoBehaviour:
   height: 10
   tileWidth: .5
   tileHeight: .5
+  tiles:
+  - {fileID: 161680, guid: 01723ac4562f21240b300a22a9ad94ea, type: 2}
+  - {fileID: 161680, guid: 01723ac4562f21240b300a22a9ad94ea, type: 2}
+  - {fileID: 161680, guid: 01723ac4562f21240b300a22a9ad94ea, type: 2}
+  coordinates:
+  - {x: 2, y: 1}
+  - {x: 7, y: 5}
+  - {x: 3, y: 2}
