@@ -67,7 +67,7 @@ public class GroundController : MonoBehaviour {
 			GameObject tile = tiles[i];
 			
 			// Lasketaan tilen koordinaatit
-			Vector3 coord = (Vector3)coordinates[i] + new Vector3(0,0,-0.1f);
+			Vector3 coord = (Vector3)coordinates[i];
 			
 			// Vinoutus
 			if(coordinates[i].y%2==0) {
@@ -77,7 +77,7 @@ public class GroundController : MonoBehaviour {
 			}
 			
 			// Instantioi erikoistilen koordinaatteihin
-			GameObject instantiatedTile = (GameObject)Instantiate(tile, new Vector3((coord.x * tileWidth) + offset, coord.y * tileHeight, coord.z), Quaternion.identity);
+			GameObject instantiatedTile = (GameObject)Instantiate(tile, new Vector3((coord.x * tileWidth) + offset, coord.y * tileHeight, 0.9f), Quaternion.identity);
 			// Asettaa luodun tilen tämän lapseksi
 			instantiatedTile.transform.parent = transform;
 			

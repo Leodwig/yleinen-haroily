@@ -18,7 +18,7 @@ public class UnitController : MonoBehaviour {
 			GameObject tile = GroundController.instance.tilesAsArray[(int)coordinates[i].x,(int)coordinates[i].y];
 			
 			instantiatedUnit.transform.parent = tile.transform;
-			instantiatedUnit.transform.position = tile.transform.position + new Vector3(0,0,0.1f);
+			instantiatedUnit.transform.position = tile.transform.position + new Vector3(0,0,-0.2f);
 		}
 }
 }
