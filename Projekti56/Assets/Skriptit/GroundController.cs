@@ -18,7 +18,7 @@ public class GroundController : MonoBehaviour {
 	public Vector2[] coordinates;
 
 	private float offset;
-	public float offsetAmount;
+	private float offsetAmount;
 	
 	void Start () {
 		// Asetetaan muuttujan alkuarvo
