@@ -156,8 +156,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   units:
   - {fileID: 143048, guid: e279e05c005a8484096398408296684d, type: 2}
+  - {fileID: 179574, guid: 0ddcd5123000e4344a6f362b44ca8b2c, type: 2}
   coordinates:
   - {x: 0, y: 0}
+  - {x: 1, y: 0}
 --- !u!1001 &917984818
 Prefab:
   m_ObjectHideFlags: 0
