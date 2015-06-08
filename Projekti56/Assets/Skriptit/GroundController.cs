@@ -35,6 +35,21 @@ public class GroundController : MonoBehaviour {
 	public GameObject[] GetNeighbours(GameObject tile) {
 		List<GameObject> neighbours = new List<GameObject>();
 
+		// Etsitään tilen koordinaatit
+		int x = -1;
+		int y = -1;
+		for (int i = 0; i < tilesAsArray.GetLength(0); i++) {
+			for (int j = 0; j < tilesAsArray.GetLength(1); j++) {
+				if (tilesAsArray[i,j] == tile) {
+					x = i;
+					y = j;
+					break;
+				}
+			}
+		}
+		
+		// Nyt tiedetään etsityn tilen koordinaatit, x ja y
+		
 		// Etsitään tilen "tile" naapurit ja lisätää ne neighboursiin
 		
 		return neighbours.ToArray();
