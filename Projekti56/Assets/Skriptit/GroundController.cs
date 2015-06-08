@@ -78,7 +78,7 @@ public class GroundController : MonoBehaviour {
 		}
 		
 		// Parilliset rivit
-		if (j%2==0) {
+		if (y%2==0) {
 			if (x < width) {
 				
 				// Oikea alanaaputi
@@ -94,7 +94,7 @@ public class GroundController : MonoBehaviour {
 		}
 		
 		// Parittomat rivit
-		if (j%2!=0) {
+		if (y%2!=0) {
 			if (x > 0) {
 				
 				// Vasen alanaaputi
