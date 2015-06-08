@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Tile : MonoBehaviour {
 	
-	bool clicked = false
+	public bool clicked = false;
 
 	// Use this for initialization
 	void Start () {
