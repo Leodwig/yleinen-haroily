@@ -34,7 +34,7 @@ Material:
         second:
           m_Texture: {fileID: 2800000, guid: df0ffcc7ed4d822408d84a34b9d048e0, type: 3}
           m_Scale: {x: 1, y: 1}
-          m_Offset: {x: .283330262, y: .495431244}
+          m_Offset: {x: .474047959, y: .474054515}
       data:
         first:
           name: _Static
