@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 464348}
   - 212: {fileID: 21256192}
   - 114: {fileID: 11413954}
+  - 65: {fileID: 6561372}
   m_Layer: 0
   m_Name: Hill
   m_TagString: Untagged
@@ -29,6 +30,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!65 &6561372
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156056}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &11413954
 MonoBehaviour:
   m_ObjectHideFlags: 1

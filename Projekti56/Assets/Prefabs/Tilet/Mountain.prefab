@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 471972}
   - 212: {fileID: 21291744}
   - 114: {fileID: 11495864}
+  - 65: {fileID: 6559376}
   m_Layer: 0
   m_Name: Mountain
   m_TagString: Untagged
@@ -29,6 +30,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!65 &6559376
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 184554}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &11495864
 MonoBehaviour:
   m_ObjectHideFlags: 1
