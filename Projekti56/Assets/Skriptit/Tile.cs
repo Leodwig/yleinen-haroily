@@ -12,7 +12,17 @@ public class Tile : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (clicked == true) {
+			transform.Find("Frame").gameObject.SetActive(true);
+		}
+		else {
+			transform.Find("Frame").gameObject.SetActive(false);
+		}
 	}
 }
 // hit.transform.GetComponent[tile]
+
+// jos clicked = true
+// transform.Find("Frame").SetActive(true);
+
+// if (asfjaf) { .... } else { .... }
