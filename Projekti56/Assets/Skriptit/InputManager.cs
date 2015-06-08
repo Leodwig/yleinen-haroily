@@ -3,6 +3,8 @@ using System.Collections;
 
 public class InputManager : MonoBehaviour {
 
+	private GameObject selected;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -17,7 +19,10 @@ public class InputManager : MonoBehaviour {
 			if (Physics.Raycast(ray, out hit)) {
 				// Tähän settiä
 				Debug.Log(hit.transform.name);
-				hit.transform.GetComponent<Tile>().clicked = true;
+				
+				selected.GetComponent<Tile>().clicked = false;
+				selected = hit.gameObject;
+				selected.GetComponent<Tile>().clicked = true;
 			}
 		}
 	}
