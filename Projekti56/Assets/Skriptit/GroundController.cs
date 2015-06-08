@@ -55,6 +55,61 @@ public class GroundController : MonoBehaviour {
 		// tilesAsArray[x-1,y], tilesAsArray[x,y+1] ja tilesAsArray[x,y-1]. Mutta
 		// koska meillä on tämä hassu vinottaisuussysteemi.
 		
+		// Noniin, testaillaan!
+		
+		// Vasen naapuri
+		if (x > 0) {
+			neighbours.Add(tilesAsArray[x-1,y]);
+		}
+		
+		// Oikea naapuri
+		if (x < width) {
+			neighbours.Add(tilesAsArray[x+1,y]);
+		}
+		
+		// Alanaapuri
+		if (y > 0) {
+			neighbours.Add(tilesAsArray[x,y-1]);
+		}
+		
+		// Ylänaapuri
+		if (y < height) {
+			neighbours.Add(tilesAsArray[x,y+1]);
+		}
+		
+		// Parilliset rivit
+		if (j%2==0) {
+			if (x < width) {
+				
+				// Oikea alanaaputi
+				if (y > 0) {
+					neighbours.Add(tilesAsArray[x+1,y-1]);
+				}
+				
+				// Oikea ylänaapuri
+				if (y < height) {
+					neighbours.Add(tilesAsArray[x+1,y+1]);
+				}
+			}
+		}
+		
+		// Parittomat rivit
+		if (j%2!=0) {
+			if (x > 0) {
+				
+				// Vasen alanaaputi
+				if (y > 0) {
+					neighbours.Add(tilesAsArray[x-1,y-1]);
+				}
+				
+				// Vasen ylänaapuri
+				if (y < height) {
+					neighbours.Add(tilesAsArray[x-1,y+1]);
+				}
+			}
+		}
+				
+		
 		return neighbours.ToArray();
 	}
 	
