@@ -21,8 +21,10 @@ public class InputManager : MonoBehaviour {
 				Debug.Log(hit.transform.name);
 				
 				if (hit.transform.GetComponent<Tile>()) {
-					if (selected.GetComponent<Tile>()) {
-						selected.GetComponent<Tile>().clicked = false;
+					if (selected != null) {
+						if (selected.GetComponent<Tile>()) {
+							selected.GetComponent<Tile>().clicked = false;
+						}
 					}
 					selected = hit.transform.gameObject;
 					selected.GetComponent<Tile>().clicked = true;
