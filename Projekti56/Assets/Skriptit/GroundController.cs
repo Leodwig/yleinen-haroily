@@ -49,8 +49,11 @@ public class GroundController : MonoBehaviour {
 		}
 		
 		// Nyt tiedetään etsityn tilen koordinaatit, x ja y
-		
 		// Etsitään tilen "tile" naapurit ja lisätää ne neighboursiin
+		// Eli: neighboursiin lisätään komennolla neighbours.Add(naapuriTile);.
+		// Nykyinen tile on tilesAsArray[x,y] ja naapurit esimerkiksi tilesAsArray[x+1,y],
+		// tilesAsArray[x-1,y], tilesAsArray[x,y+1] ja tilesAsArray[x,y-1]. Mutta
+		// koska meillä on tämä hassu vinottaisuussysteemi.
 		
 		return neighbours.ToArray();
 	}
