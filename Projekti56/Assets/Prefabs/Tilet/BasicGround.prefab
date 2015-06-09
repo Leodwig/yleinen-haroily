@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clicked: 0
+  movementCost: 2
 --- !u!212 &21255140
 SpriteRenderer:
   m_ObjectHideFlags: 1
