@@ -4,6 +4,9 @@ using System.Collections;
 public class Tile : MonoBehaviour {
 	
 	public bool clicked = false;
+	
+	// Tarvittava movement, että yksikkö voi siirtyä tileen
+	public int movementCost;
 
 	// Use this for initialization
 	void Start () {
@@ -20,9 +23,3 @@ public class Tile : MonoBehaviour {
 		}
 	}
 }
-// hit.transform.GetComponent[tile]
-
-// jos clicked = true
-// transform.Find("Frame").SetActive(true);
-
-// if (asfjaf) { .... } else { .... }
