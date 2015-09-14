@@ -63,7 +63,7 @@ public class GroundController : MonoBehaviour {
 		}
 		
 		// Oikea naapuri
-		if (x < width) {
+		if (x < width - 1) {
 			neighbours.Add(tilesAsArray[x+1,y]);
 		}
 		
@@ -73,13 +73,13 @@ public class GroundController : MonoBehaviour {
 		}
 		
 		// Ylänaapuri
-		if (y < height) {
+		if (y < height - 1) {
 			neighbours.Add(tilesAsArray[x,y+1]);
 		}
 		
 		// Parilliset rivit
 		if (y%2==0) {
-			if (x < width) {
+			if (x < width - 1) {
 				
 				// Oikea alanaaputi
 				if (y > 0) {
@@ -87,7 +87,7 @@ public class GroundController : MonoBehaviour {
 				}
 				
 				// Oikea ylänaapuri
-				if (y < height) {
+				if (y < height - 1) {
 					neighbours.Add(tilesAsArray[x+1,y+1]);
 				}
 			}
@@ -103,7 +103,7 @@ public class GroundController : MonoBehaviour {
 				}
 				
 				// Vasen ylänaapuri
-				if (y < height) {
+				if (y < height - 1) {
 					neighbours.Add(tilesAsArray[x-1,y+1]);
 				}
 			}
