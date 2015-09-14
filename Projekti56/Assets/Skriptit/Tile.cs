@@ -36,6 +36,7 @@ public class Tile : MonoBehaviour {
 		for (int i = 0; i < tileObjects.Length; i++) {
 			tiles[i] = tileObjects[i].GetComponent<Tile> ();
 		}
+		Debug.Log(tiles.Length);
 		foreach (Tile tile in tiles) {
 			tile.HighlightThis();
 		}
