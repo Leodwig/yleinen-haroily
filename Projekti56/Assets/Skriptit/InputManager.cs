@@ -23,7 +23,7 @@ public class InputManager : MonoBehaviour {
                 //Osutaanko tileen
                 if (hit.transform.GetComponent<Tile>()) {
 
-                    //Jos osutaan, ja kyseessä on highlightattu ruutu (potentiaalinen liikkumisruutu)
+                    //Jos muistissa on aiemmin klikattu ruutu, ja nyt kyseessä on uusi highlightattu ruutu (potentiaalinen liikkumisruutu)
                     if (selected && hit.transform.GetComponent<Tile>().isHighlighted()) {
 
                         //Jos edellisessä valitussa tilessä on liikkumiskykyinen yksikkö
