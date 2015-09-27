@@ -19,16 +19,27 @@ public class InputManager : MonoBehaviour {
             if (Physics.Raycast(ray, out hit)) {
                 if (hit.transform.GetComponent<Tile>()) {
                     if (selected && hit.transform.GetComponent<Tile>().isHighlighted()) {
-                        //selected.GetComponent<Tile>().unitInTile
-                    } else {
-                        foreach (GameObject obj in gc.tilesAsArray) {
-                            obj.transform.GetComponent<Tile>().Unclick();
+                        if (selected.GetComponent<Tile>().unitInTile != null) {
+                            if (selected.GetComponent<Tile>().unitInTile.GetComponent<Unit>().CanMove()) {
+                                selected.GetComponent<Tile>().unitInTile.GetComponent<Unit>().Move(hit.transform.gameObject);
+                                selected.GetComponent<Tile>().unitInTile = null;
+                                selected = null;
+                                UnselectAll();
+                            }
                         }
+                    } else {
+                        UnselectAll();
                         selected = hit.transform.gameObject;
                         selected.GetComponent<Tile>().Click();
                     }
                 }
             }
+        }
+    }
+
+    private void UnselectAll() {
+        foreach (GameObject obj in gc.tilesAsArray) {
+            obj.transform.GetComponent<Tile>().Unclick();
         }
     }
 }
