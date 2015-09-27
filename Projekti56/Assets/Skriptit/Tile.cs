@@ -5,6 +5,7 @@ public class Tile : MonoBehaviour {
 	
 	private bool clicked = false;
     private bool selected = false;
+    private bool highlighted = false;
 
 	// Tarvittava movement, että yksikkö voi siirtyä tileen
 	public int movementCost;
@@ -48,6 +49,7 @@ public class Tile : MonoBehaviour {
     }
 
     private void HighlightThis () {	// Highlightausfunktio
+        highlighted = true;
 		transform.Find("Frame").gameObject.SetActive(true);
 		transform.Find("Frame").gameObject.GetComponent<Animator>().enabled = false;
 	}
@@ -61,9 +63,14 @@ public class Tile : MonoBehaviour {
     }
 
     public void Unclick() {
+        highlighted = false;
         clicked = false;
         selected = false;
         UnselectThis();
         UnhighlightNeighbours();
+    }
+
+    public bool isHighlighted() {
+        return highlighted;
     }
 }

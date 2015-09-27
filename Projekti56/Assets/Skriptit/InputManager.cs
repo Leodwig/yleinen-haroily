@@ -18,11 +18,15 @@ public class InputManager : MonoBehaviour {
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit)) {
                 if (hit.transform.GetComponent<Tile>()) {
-                    foreach (GameObject obj in gc.tilesAsArray) {
-                        obj.transform.GetComponent<Tile>().Unclick();
+                    if (selected && hit.transform.GetComponent<Tile>().isHighlighted()) {
+                        //selected.GetComponent<Tile>().unitInTile
+                    } else {
+                        foreach (GameObject obj in gc.tilesAsArray) {
+                            obj.transform.GetComponent<Tile>().Unclick();
+                        }
+                        selected = hit.transform.gameObject;
+                        selected.GetComponent<Tile>().Click();
                     }
-                    selected = hit.transform.gameObject;
-                    selected.GetComponent<Tile>().Click();
                 }
             }
         }
