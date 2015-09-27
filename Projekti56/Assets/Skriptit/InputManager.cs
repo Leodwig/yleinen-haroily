@@ -26,6 +26,10 @@ public class InputManager : MonoBehaviour {
                                 selected = null;
                                 UnselectAll();
                             }
+                        } else {
+                            UnselectAll();
+                            selected = hit.transform.gameObject;
+                            selected.GetComponent<Tile>().Click();
                         }
                     } else {
                         UnselectAll();
