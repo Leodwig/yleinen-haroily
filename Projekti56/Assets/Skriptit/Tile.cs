@@ -22,6 +22,7 @@ public class Tile : MonoBehaviour {
             }
 		}
 	}
+    public GameObject unitInTile;
 
 	private void HighlightNeighbours () {
 		// Naapureiden highlight
@@ -43,6 +44,7 @@ public class Tile : MonoBehaviour {
     private void SelectThis() {
         transform.Find("Frame").gameObject.SetActive(true);
         transform.Find("Frame").gameObject.GetComponent<Animator>().enabled = true;
+        // unitInTile.GetComponent<Unit>().selected = true;
     }
 
     private void HighlightThis () {	// Highlightausfunktio

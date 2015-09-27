@@ -16,8 +16,8 @@ public class UnitController : MonoBehaviour {
 			
 			// Groundcontrollerin taulukosta haetaan tile, johon unit ollaan laittamassa
 			GameObject tile = GroundController.instance.tilesAsArray[(int)coordinates[i].x,(int)coordinates[i].y];
-			
-			instantiatedUnit.transform.parent = tile.transform;
+
+            tile.GetComponent<Tile>().unitInTile = instantiatedUnit;
 			instantiatedUnit.transform.position = tile.transform.position + new Vector3(0,0,-0.2f);
 		}
 }
