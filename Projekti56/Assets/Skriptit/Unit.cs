@@ -29,6 +29,7 @@ public class Unit : MonoBehaviour {
     }
 
     public void SetTile(GameObject tile) {
+        currentTile.GetComponent<Tile>().unitInTile = null;
         currentTile = tile;
         tile.GetComponent<Tile>().unitInTile = this.gameObject;
         this.transform.position = tile.transform.position + new Vector3(0, 0, -0.2f);
