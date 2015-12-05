@@ -26,9 +26,9 @@ public class InputManager : MonoBehaviour {
                     //Jos muistissa on aiemmin klikattu ruutu, ja nyt kyseessä on uusi highlightattu ruutu (potentiaalinen liikkumisruutu)
                     if (selected && hit.transform.GetComponent<Tile>().isHighlighted()) {
 
-                        //Jos edellisessä valitussa tilessä on liikkumiskykyinen yksikkö
+                        //Jos edellisessä valitussa tilessä on liikkumiskykyinen yksikkö ja kohderuutu on vapaa
                         if (selected.GetComponent<Tile>().unitInTile != null) {
-                            if (selected.GetComponent<Tile>().unitInTile.GetComponent<Unit>().CanMove()) {
+                            if (selected.GetComponent<Tile>().unitInTile.GetComponent<Unit>().CanMove() && hit.transform.GetComponent<Tile>().unitInTile == null) {
 
                                 //Liikutetaan yksikkö uuteen tileensä ja poistetaan highlightit kaikista ruuduista
                                 selected.GetComponent<Tile>().unitInTile.GetComponent<Unit>().Move(hit.transform.gameObject);
