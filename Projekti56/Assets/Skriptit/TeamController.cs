@@ -20,6 +20,9 @@ public class TeamController : MonoBehaviour {
 			GameObject tile = GroundController.instance.tilesAsArray[(int)coordinates[i].x,(int)coordinates[i].y];
             
             instantiatedUnit.GetComponent<Unit>().SetTile(tile);
+
+            // Asetetaan tiimi
+            instantiatedUnit.GetComponent<Unit>().SetTeam(this);
 		}
     }
 }

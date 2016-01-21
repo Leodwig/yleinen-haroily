@@ -10,9 +10,11 @@ public class Unit : MonoBehaviour {
 
     private GameObject currentTile;
 
+    private TeamController team;
+
 	// Use this for initialization
 	void Start () {
-	
+	    
 	}
 	
 	// Update is called once per frame
@@ -35,6 +37,14 @@ public class Unit : MonoBehaviour {
         currentTile = tile;
         tile.GetComponent<Tile>().unitInTile = this.gameObject;
         this.transform.position = tile.transform.position + new Vector3(0, 0, -0.2f);
+    }
+
+    public void SetTeam(TeamController team) {
+        this.team = team;
+    }
+
+    public TeamController GetTeam() {
+        return team;
     }
 
 }

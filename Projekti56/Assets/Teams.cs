@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class Teams : MonoBehaviour {
+    public static Teams instance;
 
     public TeamController[] teams;
 
@@ -9,11 +10,12 @@ public class Teams : MonoBehaviour {
     private int currentTeamId = 0;
 
     void Start() {
+        instance = this;
         currentTeam = teams[currentTeamId];
     }
 
     public void AdvanceTurn() {
-        if (teams[currentTeamId+1]) {
+        if (teams.Length > currentTeamId + 1) {
             currentTeamId++;
         } else {
             currentTeamId = 0;

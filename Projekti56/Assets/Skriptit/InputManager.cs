@@ -28,19 +28,23 @@ public class InputManager : MonoBehaviour {
                         if (selected.GetComponent<Tile>().unitInTile != null) {
                             if (selected.GetComponent<Tile>().unitInTile.GetComponent<Unit>().CanMove() && hit.transform.GetComponent<Tile>().unitInTile == null) {
 
-                                //Liikutetaan yksikkö uuteen tileensä ja poistetaan highlightit kaikista ruuduista
-                                selected.GetComponent<Tile>().unitInTile.GetComponent<Unit>().Move(hit.transform.gameObject);
-                                selected = null;
-                                UnselectAll();
+                                // Jos yksikkö kuuluu kontrolloivaan tiimiin
+                                if (selected.GetComponent<Tile>().unitInTile.GetComponent<Unit>().GetTeam() == Teams.instance.currentTeam) {
+                                    //Liikutetaan yksikkö uuteen tileensä ja poistetaan highlightit kaikista ruuduista
+                                    selected.GetComponent<Tile>().unitInTile.GetComponent<Unit>().Move(hit.transform.gameObject);
+                                    selected = null;
+                                    UnselectAll();
+                                }
+
                             }
-                        //Muutoin
+                            //Muutoin
                         } else {
                             //Deselektoidaan kaikki vanhat tilet ja valitaan klikattu tile (tile sitten itse highlightaa kaikki naapurinsa)
                             UnselectAll();
                             selected = hit.transform.gameObject;
                             selected.GetComponent<Tile>().Click();
                         }
-                    //Muutoin
+                        //Muutoin
                     } else {
                         //Sama deselektointi
                         UnselectAll();
