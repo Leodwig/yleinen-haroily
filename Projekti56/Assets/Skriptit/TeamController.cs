@@ -1,14 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class UnitController : MonoBehaviour {
+public class TeamController : MonoBehaviour {
+
+    public string teamName;
 
 	public GameObject[] units;
 	public Vector2[] coordinates;
 	
 	void Start () {
 	
-	for (int i = 0; i < units.Length; i++) {
+	    for (int i = 0; i < units.Length; i++) {
 			GameObject unit = units[i];
 			
 			// Instantioi unitin koordinaatteihin
@@ -19,5 +21,5 @@ public class UnitController : MonoBehaviour {
             
             instantiatedUnit.GetComponent<Unit>().SetTile(tile);
 		}
-}
+    }
 }
