@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class GroundController : MonoBehaviour {
-
 	public static GroundController instance;
 
 	// Peruslattian prefab
@@ -108,7 +107,6 @@ public class GroundController : MonoBehaviour {
 				}
 			}
 		}
-				
 		
 		return neighbours.ToArray();
 	}

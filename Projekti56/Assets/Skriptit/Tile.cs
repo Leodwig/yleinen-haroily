@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class Tile : MonoBehaviour {
-	
 	private bool clicked = false;
     private bool selected = false;
     private bool highlighted = false;

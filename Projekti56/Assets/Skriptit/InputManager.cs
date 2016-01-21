@@ -2,9 +2,7 @@
 using System.Collections;
 
 public class InputManager : MonoBehaviour {
-
     private GameObject selected;
-
     private GroundController gc;
 
     void Start() {
