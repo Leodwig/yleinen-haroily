@@ -20,7 +20,7 @@ public class Tile : MonoBehaviour {
                 if (unitInTile != null) {
                     HighlightNeighbours(unitInTile.GetComponent<Unit>().movement);
                 } else {
-                    HighlightNeighbours();
+                    //HighlightNeighbours();
                 }
             }
 		}
