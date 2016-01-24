@@ -38,27 +38,27 @@ public class InputManager : MonoBehaviour {
                             // Jos siinä ruudussa olikin jo joku niin valitaan se
                             } else if (hit.transform.GetComponent<Tile>().unitInTile != null) {
                                 //Deselektoidaan kaikki vanhat tilet ja valitaan klikattu tile (tile sitten itse highlightaa kaikki naapurinsa)
-                                UnselectAll();
-                                selected = hit.transform.gameObject;
-                                selected.GetComponent<Tile>().Click();
+                                Select(hit);
                             }
                             //Muutoin
                         } else {
                             //Deselektoidaan kaikki vanhat tilet ja valitaan klikattu tile (tile sitten itse highlightaa kaikki naapurinsa)
-                            UnselectAll();
-                            selected = hit.transform.gameObject;
-                            selected.GetComponent<Tile>().Click();
+                            Select(hit);
                         }
                         //Muutoin
                     } else {
                         //Sama deselektointi
-                        UnselectAll();
-                        selected = hit.transform.gameObject;
-                        selected.GetComponent<Tile>().Click();
+                        Select(hit);
                     }
                 }
             }
         }
+    }
+
+    private void Select(RaycastHit hit) {
+        UnselectAll();
+        selected = hit.transform.gameObject;
+        selected.GetComponent<Tile>().Click();
     }
 
     private void UnselectAll() {
