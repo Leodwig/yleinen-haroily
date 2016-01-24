@@ -35,7 +35,12 @@ public class InputManager : MonoBehaviour {
                                     selected = null;
                                     UnselectAll();
                                 }
-
+                            // Jos siinä ruudussa olikin jo joku niin valitaan se
+                            } else if (hit.transform.GetComponent<Tile>().unitInTile != null) {
+                                //Deselektoidaan kaikki vanhat tilet ja valitaan klikattu tile (tile sitten itse highlightaa kaikki naapurinsa)
+                                UnselectAll();
+                                selected = hit.transform.gameObject;
+                                selected.GetComponent<Tile>().Click();
                             }
                             //Muutoin
                         } else {

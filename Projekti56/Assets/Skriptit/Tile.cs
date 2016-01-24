@@ -17,31 +17,45 @@ public class Tile : MonoBehaviour {
 		if (clicked) {
             if (!selected) {
                 SelectThis();
-                HighlightNeighbours();
-                selected = true;
+                if (unitInTile != null) {
+                    HighlightNeighbours(unitInTile.GetComponent<Unit>().movement);
+                } else {
+                    HighlightNeighbours();
+                }
             }
 		}
 	}
     public GameObject unitInTile;
 
-	private void HighlightNeighbours () {
+	private GameObject[] HighlightNeighbours () {
 		// Naapureiden highlight
 		GameObject[] tileObjects = GroundController.instance.GetNeighbours(gameObject);
-		Tile[] tiles = new Tile[tileObjects.Length];
         for (int i = 0; i < tileObjects.Length; i++) {
-            tileObjects[i].GetComponent<Tile>().HighlightThis();
+            if (!tileObjects[i].GetComponent<Tile>().isHighlighted() && !tileObjects[i].GetComponent<Tile>().isSelected()) {
+                tileObjects[i].GetComponent<Tile>().HighlightThis();
+            }
+        }
+        return tileObjects;
+    }
+
+    public void HighlightNeighbours (int range) {
+        if (range > 0) {
+            GameObject[] neighbours = HighlightNeighbours();
+            for (int i = 0; i < neighbours.Length; i++) {
+                neighbours[i].GetComponent<Tile>().HighlightNeighbours(range - 1);
+            }
         }
     }
 
     private void UnhighlightNeighbours() {
         GameObject[] tileObjects = GroundController.instance.GetNeighbours(gameObject);
-        Tile[] tiles = new Tile[tileObjects.Length];
         for (int i = 0; i < tileObjects.Length; i++) {
             tileObjects[i].GetComponent<Tile>().UnselectThis();
         }
     }
 
     private void SelectThis() {
+        selected = true;
         transform.Find("Frame").gameObject.SetActive(true);
         transform.Find("Frame").gameObject.GetComponent<Animator>().enabled = true;
         // unitInTile.GetComponent<Unit>().selected = true;
@@ -71,5 +85,9 @@ public class Tile : MonoBehaviour {
 
     public bool isHighlighted() {
         return highlighted;
+    }
+
+    public bool isSelected() {
+        return selected;
     }
 }
