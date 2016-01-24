@@ -515,8 +515,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teamName: Tiimi kaxi!
-  units: []
-  coordinates: []
+  units:
+  - {fileID: 143048, guid: e279e05c005a8484096398408296684d, type: 2}
+  - {fileID: 143048, guid: e279e05c005a8484096398408296684d, type: 2}
+  coordinates:
+  - {x: 4, y: 5}
+  - {x: 5, y: 5}
 --- !u!1001 &917984818
 Prefab:
   m_ObjectHideFlags: 0
