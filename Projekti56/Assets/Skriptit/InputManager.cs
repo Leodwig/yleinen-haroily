@@ -46,6 +46,7 @@ public class InputManager : MonoBehaviour {
                                         if (ownUnit.canFight) {
                                             CombatController.instance.Fight(ownUnit, targetUnit);
                                             ownUnit.canFight = false;
+                                            Debug.Log("FIGHT! Between " + ownUnit.name + " (team "+ownUnit.GetTeam() + ") and " + targetUnit.name + " (team "+ownUnit.GetTeam() + ")");
                                         }
                                     } else {
                                         //Deselektoidaan kaikki vanhat tilet ja valitaan klikattu tile (tile sitten itse highlightaa kaikki naapurinsa)
