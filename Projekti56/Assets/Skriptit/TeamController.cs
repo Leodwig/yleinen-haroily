@@ -23,6 +23,8 @@ public class TeamController : MonoBehaviour {
 
             // Asetetaan tiimi
             instantiatedUnit.GetComponent<Unit>().SetTeam(this);
+
+            units[i] = instantiatedUnit;
 		}
     }
 }

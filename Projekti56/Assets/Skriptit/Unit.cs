@@ -6,7 +6,7 @@ public class Unit : MonoBehaviour {
 	// Yksikölle ominainen liikkumisnopeus
 	public int movement;
 
-    private bool canMove = true;
+    public bool canMove = true;
 
     private GameObject currentTile;
 
@@ -26,10 +26,6 @@ public class Unit : MonoBehaviour {
         SetTile(newTile);
     }
 
-    public bool CanMove() {
-        return canMove;
-    }
-
     public void SetTile(GameObject tile) {
         if (currentTile) {
             currentTile.GetComponent<Tile>().unitInTile = null;
@@ -45,11 +41,6 @@ public class Unit : MonoBehaviour {
 
     public TeamController GetTeam() {
         return team;
-    }
-
-    public void setMove(bool value)
-    {
-        canMove = value;
     }
 
 }

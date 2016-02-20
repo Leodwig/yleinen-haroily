@@ -26,16 +26,17 @@ public class InputManager : MonoBehaviour {
 
                         //Jos edellisessä valitussa tilessä on liikkumiskykyinen yksikkö ja kohderuutu on vapaa
                         if (selected.GetComponent<Tile>().unitInTile != null) {
-                            if (selected.GetComponent<Tile>().unitInTile.GetComponent<Unit>().CanMove() && hit.transform.GetComponent<Tile>().unitInTile == null) {
-
-                                // Jos yksikkö kuuluu kontrolloivaan tiimiin
-                                if (selected.GetComponent<Tile>().unitInTile.GetComponent<Unit>().GetTeam() == Teams.instance.currentTeam) {
-                                    //Liikutetaan yksikkö uuteen tileensä ja poistetaan highlightit kaikista ruuduista
-                                    Unit unit = selected.GetComponent<Tile>().unitInTile.GetComponent<Unit>();
-                                    unit.Move(hit.transform.gameObject);
-                                    selected = null;
-                                    UnselectAll();
-                                    unit.setMove(false);
+                            if (hit.transform.GetComponent<Tile>().unitInTile == null) {
+                                if (selected.GetComponent<Tile>().unitInTile.GetComponent<Unit>().canMove) {
+                                    // Jos yksikkö kuuluu kontrolloivaan tiimiin
+                                    if (selected.GetComponent<Tile>().unitInTile.GetComponent<Unit>().GetTeam() == Teams.instance.currentTeam) {
+                                        //Liikutetaan yksikkö uuteen tileensä ja poistetaan highlightit kaikista ruuduista
+                                        Unit unit = selected.GetComponent<Tile>().unitInTile.GetComponent<Unit>();
+                                        unit.Move(hit.transform.gameObject);
+                                        selected = null;
+                                        UnselectAll();
+                                        unit.canMove = false;
+                                    }
                                 }
                                 // Jos siinä ruudussa olikin jo joku niin valitaan se
                             } else if (hit.transform.GetComponent<Tile>().unitInTile != null) {
