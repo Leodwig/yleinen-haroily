@@ -4,9 +4,11 @@ using System.Collections;
 public class Unit : MonoBehaviour {
 	
 	// Yksikölle ominainen liikkumisnopeus
-	public int movement;
+	public int movement = 1;
+    public int attackRange = 1;
 
     public bool canMove = true;
+    public bool canFight = true;
 
     private GameObject currentTile;
 

@@ -5,9 +5,10 @@ public class Tile : MonoBehaviour {
 	private bool clicked = false;
     private bool selected = false;
     private bool highlighted = false;
+    public GameObject unitInTile;
 
-	// Tarvittava movement, että yksikkö voi siirtyä tileen
-	public int movementCost;
+    // Tarvittava movement, että yksikkö voi siirtyä tileen
+    public int movementCost = 1;
 	
 	// Kertoo, voiko yksikkö siirtyä tileen
 	public bool moveable = false;
@@ -25,7 +26,6 @@ public class Tile : MonoBehaviour {
             }
 		}
 	}
-    public GameObject unitInTile;
 
 	private GameObject[] HighlightNeighbours () {
 		// Naapureiden highlight
@@ -42,7 +42,7 @@ public class Tile : MonoBehaviour {
         if (range > 0) {
             GameObject[] neighbours = HighlightNeighbours();
             for (int i = 0; i < neighbours.Length; i++) {
-                neighbours[i].GetComponent<Tile>().HighlightNeighbours(range - 1);
+                neighbours[i].GetComponent<Tile>().HighlightNeighbours(range - movementCost);
             }
         }
     }

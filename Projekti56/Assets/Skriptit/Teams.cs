@@ -34,6 +34,7 @@ public class Teams : MonoBehaviour {
     public void handleTurnStart() {
         foreach (GameObject obj in currentTeam.units) {
             obj.GetComponent<Unit>().canMove = true;
+            obj.GetComponent<Unit>().canFight = true;
         }
     }
 	
