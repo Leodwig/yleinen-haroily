@@ -47,4 +47,9 @@ public class Unit : MonoBehaviour {
         return team;
     }
 
+    public void setMove(bool value)
+    {
+        canMove = value;
+    }
+
 }

@@ -31,11 +31,13 @@ public class InputManager : MonoBehaviour {
                                 // Jos yksikkö kuuluu kontrolloivaan tiimiin
                                 if (selected.GetComponent<Tile>().unitInTile.GetComponent<Unit>().GetTeam() == Teams.instance.currentTeam) {
                                     //Liikutetaan yksikkö uuteen tileensä ja poistetaan highlightit kaikista ruuduista
-                                    selected.GetComponent<Tile>().unitInTile.GetComponent<Unit>().Move(hit.transform.gameObject);
+                                    Unit unit = selected.GetComponent<Tile>().unitInTile.GetComponent<Unit>();
+                                    unit.Move(hit.transform.gameObject);
                                     selected = null;
                                     UnselectAll();
+                                    unit.setMove(false);
                                 }
-                            // Jos siinä ruudussa olikin jo joku niin valitaan se
+                                // Jos siinä ruudussa olikin jo joku niin valitaan se
                             } else if (hit.transform.GetComponent<Tile>().unitInTile != null) {
                                 //Deselektoidaan kaikki vanhat tilet ja valitaan klikattu tile (tile sitten itse highlightaa kaikki naapurinsa)
                                 Select(hit);

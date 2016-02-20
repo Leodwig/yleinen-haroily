@@ -21,12 +21,21 @@ public class Teams : MonoBehaviour {
             currentTeamId = 0;
         }
         currentTeam = teams[currentTeamId];
+        handleTurnStart();
     }
 
     public void SetTurn(int id) {
         if (teams[id]) {
             currentTeamId = id;
             currentTeam = teams[id];
+        }
+    }
+
+    public void handleTurnStart()
+    {
+        foreach (GameObject Object in currentTeam.units)
+        {
+            Object.GetComponent<Unit>().setMove(true);
         }
     }
 	
